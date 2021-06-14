@@ -162,3 +162,5 @@ G:\Repo\music-is-us\MusicIsUs\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 G:\Repo\music-is-us\MusicIsUs\obj\Debug\MusicIsUs.csprojResolveAssemblyReference.cache
 G:\Repo\music-is-us\MusicIsUs\obj\Debug\WebApplication7.dll
 G:\Repo\music-is-us\MusicIsUs\obj\Debug\WebApplication7.pdb
+G:\Repo\music-is-us\MusicIsUs\obj\Debug\WebApplication7.Migrations.Init.resources
+G:\Repo\music-is-us\MusicIsUs\obj\Debug\MusicIsUs.csproj.GenerateResource.Cache
