@@ -9,6 +9,6 @@ namespace WebApplication7.Models
     {
         public int Id { get; set; }
         public string City { get; set; }
-        public int Street { get; set; }
+        public string Street { get; set; }
     }
 }
