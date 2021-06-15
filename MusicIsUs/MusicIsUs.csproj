@@ -297,16 +297,16 @@
     <Content Include="Views\Users\Details.cshtml" />
     <Content Include="Views\Users\Edit.cshtml" />
     <Content Include="Views\Users\Index.cshtml" />
-    <Content Include="Views\Vinyls\Create.cshtml" />
-    <Content Include="Views\Vinyls\Delete.cshtml" />
-    <Content Include="Views\Vinyls\Details.cshtml" />
-    <Content Include="Views\Vinyls\Edit.cshtml" />
-    <Content Include="Views\Vinyls\Index.cshtml" />
     <Content Include="Views\Instruments\Create.cshtml" />
     <Content Include="Views\Instruments\Delete.cshtml" />
     <Content Include="Views\Instruments\Details.cshtml" />
     <Content Include="Views\Instruments\Edit.cshtml" />
     <Content Include="Views\Instruments\Index.cshtml" />
+    <Content Include="Views\Vinyls\Create.cshtml" />
+    <Content Include="Views\Vinyls\Delete.cshtml" />
+    <Content Include="Views\Vinyls\Details.cshtml" />
+    <Content Include="Views\Vinyls\Edit.cshtml" />
+    <Content Include="Views\Vinyls\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

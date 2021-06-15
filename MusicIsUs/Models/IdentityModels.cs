@@ -29,5 +29,7 @@ namespace MusicIsUs.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<MusicIsUs.Models.Vinyls> Vinyls { get; set; }
     }
 }

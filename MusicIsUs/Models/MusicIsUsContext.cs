@@ -4,7 +4,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Web;
 
-namespace WebApplication7.Models
+namespace MusicIsUs.Models
 {
     public class MusicIsUsContext : DbContext
     {
@@ -20,7 +20,7 @@ namespace WebApplication7.Models
             Database.SetInitializer<MusicIsUsContext>(null);
         }
 
-        public System.Data.Entity.DbSet<WebApplication7.Models.Branches> Branches { get; set; }
+        public System.Data.Entity.DbSet<MusicIsUs.Models.Branches> Branches { get; set; }
 
         public System.Data.Entity.DbSet<MusicIsUs.Models.Users> Users { get; set; }
 
