@@ -1,18 +1,18 @@
-namespace WebApplication7.Migrations
+namespace MusicIsUs.Migrations
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<WebApplication7.Models.MusicIsUsContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<MusicIsUs.Models.MusicIsUsContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(WebApplication7.Models.MusicIsUsContext context)
+        protected override void Seed(MusicIsUs.Models.MusicIsUsContext context)
         {
             //  This method will be called after migrating to the latest version.
 

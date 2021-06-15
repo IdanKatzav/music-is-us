@@ -6,9 +6,9 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using WebApplication7.Models;
+using MusicIsUs.Models;
 
-namespace WebApplication7.Controllers
+namespace MusicIsUs.Controllers
 {
     public class BranchesController : Controller
     {

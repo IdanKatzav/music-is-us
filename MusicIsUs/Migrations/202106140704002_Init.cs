@@ -1,4 +1,4 @@
-namespace WebApplication7.Migrations
+namespace MusicIsUs.Migrations
 {
     using System;
     using System.Data.Entity.Migrations;
