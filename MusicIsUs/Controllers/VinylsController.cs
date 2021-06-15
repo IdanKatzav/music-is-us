@@ -12,7 +12,7 @@ namespace MusicIsUs.Controllers
 {
     public class VinylsController : Controller
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
+        private MusicIsUsContext db = new MusicIsUsContext();
 
         // GET: Vinyls
         public ActionResult Index()
@@ -40,13 +40,6 @@ namespace MusicIsUs.Controllers
 
         public ActionResult Search(string artistName = null, string genere = null, string originCountry = null)
         {
-            // session from HEVER
-            /*vavinylcurrentUsevinyl= (Users)HttpContext.Session["user"];
-            if (currentUsevinyl== null)
-            {
-                return RedirectToAction("Index", "Error", new { message = "You are not logged in" });
-            }*/
-
             ViewBag.originCountry = db.Vinyls.Select(vinyl => vinyl.OriginCountry).Distinct();
             ViewBag.artistName = db.Vinyls.Select(vinyl => vinyl.ArtistName).Distinct();
             ViewBag.genere = db.Vinyls.Select(vinyl => vinyl.Genere).Distinct();
