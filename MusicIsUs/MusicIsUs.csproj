@@ -209,7 +209,6 @@
     <Compile Include="Migrations\202106140704002_Init.Designer.cs">
       <DependentUpon>202106140704002_Init.cs</DependentUpon>
     </Compile>
-<<<<<<< HEAD
     <Compile Include="Migrations\202106151413416_dana.cs" />
     <Compile Include="Migrations\202106151413416_dana.Designer.cs">
       <DependentUpon>202106151413416_dana.cs</DependentUpon>
@@ -217,11 +216,10 @@
     <Compile Include="Migrations\202106151425580_dana1.cs" />
     <Compile Include="Migrations\202106151425580_dana1.Designer.cs">
       <DependentUpon>202106151425580_dana1.cs</DependentUpon>
-=======
+    </Compile>
     <Compile Include="Migrations\202106140731509_Init1.cs" />
     <Compile Include="Migrations\202106140731509_Init1.Designer.cs">
       <DependentUpon>202106140731509_Init1.cs</DependentUpon>
->>>>>>> ContactUsPage
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -330,16 +328,14 @@
     <EmbeddedResource Include="Migrations\202106140704002_Init.resx">
       <DependentUpon>202106140704002_Init.cs</DependentUpon>
     </EmbeddedResource>
-<<<<<<< HEAD
     <EmbeddedResource Include="Migrations\202106151413416_dana.resx">
       <DependentUpon>202106151413416_dana.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106151425580_dana1.resx">
       <DependentUpon>202106151425580_dana1.cs</DependentUpon>
-=======
+    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106140731509_Init1.resx">
       <DependentUpon>202106140731509_Init1.cs</DependentUpon>
->>>>>>> ContactUsPage
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
