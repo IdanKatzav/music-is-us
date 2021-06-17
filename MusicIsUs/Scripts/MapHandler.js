@@ -4,8 +4,8 @@
         parseAddressForMapAPI(prop)
     })
     function parseAddressForMapAPI(address) {
-        console.log(address);
-        var parsedBySymbol = address.split(", ");
+        addressStr = address.toString();
+        var parsedBySymbol = addressStr.split(", ");
         var tempStr = [parsedBySymbol.length];
         var parsedAddress = "";
         for (var i = 0; i < parsedBySymbol.length;i++) {

@@ -4,9 +4,11 @@
 }
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 @Scripts.Render("~/Scripts/MapHandler.js")
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
-<p id="tav"> feel free to contact us in this physical locations </p>
+<h2 style="text-align : center;">Music Is Us</h2>
+<h3 style="text-align : center">Contact Us</h3>
+
+
+
 <table class="table">
     <thead>
         <tr>
@@ -29,12 +31,12 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.City)
                 </td>
-                <td><button class="displayOnMap" data-prop="@item.Street"/></td>
+                <td><button class="displayOnMap" data-prop="@item.Street"/>View the Location on the map</td>
             </tr>
         }
     </tbody>
 </table>
-
+<h3 style="text-align : center">Our Offices</h3>
 <iframe class="mapDisplay"
          width="600"
         height="450"
@@ -42,8 +44,9 @@
         loading="lazy"
         allowfullscreen
         src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBsG-gcX20RziyqnfWo6p-H44M4vbECMQ4&q=Tsahal+St+4, Ashdod"
-        ></iframe>
+></iframe>
+<a class="twitter-timeline" href="https://twitter.com/MusicIsUs2?ref_src=twsrc%5Etfw">Tweets by MusicIsUs2</a>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 <address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
+    <strong>Support:</strong>   <a href="mailto:MusicIsUs789@gmail.com">MusicIsUs789@gmail.com</a><br />
 </address>

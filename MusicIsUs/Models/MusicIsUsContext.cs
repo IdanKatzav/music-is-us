@@ -17,6 +17,7 @@ namespace WebApplication7.Models
     
         public MusicIsUsContext() : base("name=MusicIsUsContext")
         {
+            Database.SetInitializer<MusicIsUsContext>(null);
         }
 
         public System.Data.Entity.DbSet<WebApplication7.Models.Branches> Branches { get; set; }
