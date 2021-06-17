@@ -87,9 +87,6 @@ G:\Repo\music-is-us\MusicIsUs\bin\roslyn\System.Reflection.Metadata.dll
 G:\Repo\music-is-us\MusicIsUs\bin\roslyn\vbc.exe
 G:\Repo\music-is-us\MusicIsUs\bin\roslyn\VBCSCompiler.exe
 G:\Repo\music-is-us\MusicIsUs\bin\roslyn\VBCSCompiler.exe.config
-G:\Repo\music-is-us\MusicIsUs\bin\WebApplication7.dll.config
-G:\Repo\music-is-us\MusicIsUs\bin\WebApplication7.dll
-G:\Repo\music-is-us\MusicIsUs\bin\WebApplication7.pdb
 G:\Repo\music-is-us\MusicIsUs\bin\Antlr3.Runtime.dll
 G:\Repo\music-is-us\MusicIsUs\bin\EntityFramework.dll
 G:\Repo\music-is-us\MusicIsUs\bin\EntityFramework.SqlServer.dll
@@ -154,17 +151,24 @@ G:\Repo\music-is-us\MusicIsUs\bin\Microsoft.Owin.Security.Google.xml
 G:\Repo\music-is-us\MusicIsUs\bin\Microsoft.Owin.Security.Twitter.xml
 G:\Repo\music-is-us\MusicIsUs\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 G:\Repo\music-is-us\MusicIsUs\obj\Debug\MusicIsUs.csprojResolveAssemblyReference.cache
-G:\Repo\music-is-us\MusicIsUs\obj\Debug\WebApplication7.dll
-G:\Repo\music-is-us\MusicIsUs\obj\Debug\WebApplication7.pdb
-G:\Repo\music-is-us\MusicIsUs\obj\Debug\WebApplication7.Migrations.Init.resources
 G:\Repo\music-is-us\MusicIsUs\obj\Debug\MusicIsUs.csproj.GenerateResource.Cache
-C:\Users\AVI\אידן קצב\לימודים\תואר 1\שנה ב\אינטרנט\music-is-us\MusicIsUs\obj\Debug\MusicIsUs.csproj.GenerateResource.Cache
+G:\Repo\music-is-us\MusicIsUs\obj\Debug\WebApplication7.Migrations.Init1.resources
+G:\Repo\music-is-us\MusicIsUs\obj\Debug\MusicIsUs.Migrations.Init.resources
+G:\Repo\music-is-us\MusicIsUs\obj\Debug\MusicIsUs.Migrations.dana.resources
+G:\Repo\music-is-us\MusicIsUs\obj\Debug\MusicIsUs.Migrations.dana1.resources
+G:\Repo\music-is-us\MusicIsUs\obj\Debug\MusicIsUs.dll
+G:\Repo\music-is-us\MusicIsUs\obj\Debug\MusicIsUs.pdb
+G:\Repo\music-is-us\MusicIsUs\bin\MusicIsUs.dll.config
+G:\Repo\music-is-us\MusicIsUs\bin\MusicIsUs.dll
+G:\Repo\music-is-us\MusicIsUs\bin\MusicIsUs.pdb
 C:\Users\AVI\אידן קצב\לימודים\תואר 1\שנה ב\אינטרנט\music-is-us\MusicIsUs\bin\MusicIsUs.dll.config
 C:\Users\AVI\אידן קצב\לימודים\תואר 1\שנה ב\אינטרנט\music-is-us\MusicIsUs\bin\MusicIsUs.dll
 C:\Users\AVI\אידן קצב\לימודים\תואר 1\שנה ב\אינטרנט\music-is-us\MusicIsUs\bin\MusicIsUs.pdb
-C:\Users\AVI\אידן קצב\לימודים\תואר 1\שנה ב\אינטרנט\music-is-us\MusicIsUs\obj\Debug\MusicIsUs.dll
-C:\Users\AVI\אידן קצב\לימודים\תואר 1\שנה ב\אינטרנט\music-is-us\MusicIsUs\obj\Debug\MusicIsUs.pdb
-C:\Users\AVI\אידן קצב\לימודים\תואר 1\שנה ב\אינטרנט\music-is-us\MusicIsUs\obj\Debug\MusicIsUs.Migrations.Init.resources
 C:\Users\AVI\אידן קצב\לימודים\תואר 1\שנה ב\אינטרנט\music-is-us\MusicIsUs\obj\Debug\MusicIsUs.csprojResolveAssemblyReference.cache
+C:\Users\AVI\אידן קצב\לימודים\תואר 1\שנה ב\אינטרנט\music-is-us\MusicIsUs\obj\Debug\MusicIsUs.Migrations.Init.resources
 C:\Users\AVI\אידן קצב\לימודים\תואר 1\שנה ב\אינטרנט\music-is-us\MusicIsUs\obj\Debug\MusicIsUs.Migrations.dana.resources
 C:\Users\AVI\אידן קצב\לימודים\תואר 1\שנה ב\אינטרנט\music-is-us\MusicIsUs\obj\Debug\MusicIsUs.Migrations.dana1.resources
+C:\Users\AVI\אידן קצב\לימודים\תואר 1\שנה ב\אינטרנט\music-is-us\MusicIsUs\obj\Debug\WebApplication7.Migrations.Init1.resources
+C:\Users\AVI\אידן קצב\לימודים\תואר 1\שנה ב\אינטרנט\music-is-us\MusicIsUs\obj\Debug\MusicIsUs.csproj.GenerateResource.Cache
+C:\Users\AVI\אידן קצב\לימודים\תואר 1\שנה ב\אינטרנט\music-is-us\MusicIsUs\obj\Debug\MusicIsUs.dll
+C:\Users\AVI\אידן קצב\לימודים\תואר 1\שנה ב\אינטרנט\music-is-us\MusicIsUs\obj\Debug\MusicIsUs.pdb
