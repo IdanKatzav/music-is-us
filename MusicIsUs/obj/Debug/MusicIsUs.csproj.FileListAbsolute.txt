@@ -158,6 +158,7 @@ G:\Repo\music-is-us\MusicIsUs\obj\Debug\WebApplication7.dll
 G:\Repo\music-is-us\MusicIsUs\obj\Debug\WebApplication7.pdb
 G:\Repo\music-is-us\MusicIsUs\obj\Debug\WebApplication7.Migrations.Init.resources
 G:\Repo\music-is-us\MusicIsUs\obj\Debug\MusicIsUs.csproj.GenerateResource.Cache
+<<<<<<< HEAD
 C:\Users\AVI\אידן קצב\לימודים\תואר 1\שנה ב\אינטרנט\music-is-us\MusicIsUs\obj\Debug\MusicIsUs.csproj.GenerateResource.Cache
 C:\Users\AVI\אידן קצב\לימודים\תואר 1\שנה ב\אינטרנט\music-is-us\MusicIsUs\bin\MusicIsUs.dll.config
 C:\Users\AVI\אידן קצב\לימודים\תואר 1\שנה ב\אינטרנט\music-is-us\MusicIsUs\bin\MusicIsUs.dll
@@ -168,3 +169,6 @@ C:\Users\AVI\אידן קצב\לימודים\תואר 1\שנה ב\אינטרנט\
 C:\Users\AVI\אידן קצב\לימודים\תואר 1\שנה ב\אינטרנט\music-is-us\MusicIsUs\obj\Debug\MusicIsUs.csprojResolveAssemblyReference.cache
 C:\Users\AVI\אידן קצב\לימודים\תואר 1\שנה ב\אינטרנט\music-is-us\MusicIsUs\obj\Debug\MusicIsUs.Migrations.dana.resources
 C:\Users\AVI\אידן קצב\לימודים\תואר 1\שנה ב\אינטרנט\music-is-us\MusicIsUs\obj\Debug\MusicIsUs.Migrations.dana1.resources
+=======
+G:\Repo\music-is-us\MusicIsUs\obj\Debug\WebApplication7.Migrations.Init1.resources
+>>>>>>> ContactUsPage
