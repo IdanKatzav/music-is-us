@@ -1,4 +1,5 @@
 ﻿@model IEnumerable<MusicIsUs.Models.Branches>
+
 @{
     ViewBag.Title = "Contact";
 }
@@ -15,6 +16,41 @@
 <h3 style="text-align : center">Contact Us</h3>
 
 
+<div>
+    @using (Html.BeginForm("Search", "Home", FormMethod.Get))
+    {
+        <form class="form-inline">
+            <div class="form-group col-md-2">
+                <select class="form-control" name="city">
+                    <option id="grayOption" value="" selected>Select Branch City Name</option>
+                    @foreach (var nameOfCity in ViewBag.listOfBranchCities)
+                    {
+                        <option value="@nameOfCity">@nameOfCity</option>
+                    }
+                </select>
+            </div>
+            <div class="form-group col-md-2">
+                <select class="form-control" name="street">
+                    <option id="grayOption" value="" selected>Select Address</option>
+                    @foreach (var Street in ViewBag.listOfBranchStreets)
+                    {
+                        <option value="@Street">@Street</option>
+                    }
+                </select>
+            </div>
+            <div class="form-group col-md-2">
+                <div class="form-group col-md-3">
+                    <button type="submit" class="btn btn-info">
+                        <span class="glyphicon glyphicon-search">
+                            Search
+                        </span>
+                    </button>
+                </div>
+
+            </div>
+        </form>
+    }
+</div>
 
 <table class="table">
     <thead>
