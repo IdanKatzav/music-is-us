@@ -25,15 +25,15 @@ namespace MusicIsUs.Controllers
         public ActionResult Contact()
         {
             ViewBag.Message = "MusicIsUs is the leading music rating site";
-            //ViewBag.listOfBranchCities = dbConn.Branches.Select(b => b.City).Distinct();
-            //ViewBag.listOfBranchStreets = dbConn.Branches.Select(b => b.Street);
-
+            ViewBag.listOfBranchCities = dbConn.Branches.Select(b => b.City).Distinct();
+            ViewBag.listOfBranchStreets = dbConn.Branches.Select(b => b.Street).Distinct();
+          
             return View(dbConn.Branches.ToList()) ;
         }
         public ActionResult Search(string city = null,string street = null)
         {
             ViewBag.listOfBranchCities = dbConn.Branches.Select(b => b.City).Distinct();
-            ViewBag.listOfBranchStreets = dbConn.Branches.Select(b => b.Street);
+            ViewBag.listOfBranchStreets = dbConn.Branches.Select(b => b.Street).Distinct();
             var returnDataQuery = dbConn.Branches.Select(b => b);
 
             if (!string.IsNullOrEmpty(city))
