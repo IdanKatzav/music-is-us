@@ -38,13 +38,13 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.City)
                 </td>
-                <td><button class="displayOnMap" data-prop="@item.Street"/>View the Location on the map</td>
+                <td><button class="displayOnMap btn" data-prop="@item.Street"/>View the Location on the map</td>
             </tr>
         }
     </tbody>
 </table>
 <h3 style="text-align : center">Our Offices</h3>
-<iframe class="mapDisplay"
+<iframe class="mapDisplay center"
          width="600"
         height="450"
         style="border:0"
