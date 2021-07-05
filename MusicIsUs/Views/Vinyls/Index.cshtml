@@ -4,7 +4,7 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Vinyls</h2>
 <div class="row">
     @using (Html.BeginForm("Search", "Vinyls", FormMethod.Get))
     {
@@ -27,7 +27,7 @@
                     }
                 </select>
             </div>
-            <div class="form-group col-md-2">
+            <div class="form-group col-md-3">
                 <select class="form-control" name="originCountry">
                     <option id="grayOption" value="" selected>Select origin Country</option>
                     @foreach (var originCountry in ViewBag.originCountry)
@@ -53,19 +53,29 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Name)
+            <span class="glyphicon glyphicon-headphones">
+                @Html.DisplayNameFor(model => model.Name)
+            </span>
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ArtistName)
+            <span class="glyphicon glyphicon-user">
+                @Html.DisplayNameFor(model => model.ArtistName)
+            </span>
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.PublishDate)
+            <span class="glyphicon glyphicon-time">
+                @Html.DisplayNameFor(model => model.PublishDate)
+            </span>
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Genere)
+            <span class="glyphicon glyphicon-music">
+                @Html.DisplayNameFor(model => model.Genere)
+            </span>
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.OriginCountry)
+            <span class="glyphicon glyphicon-globe">
+                @Html.DisplayNameFor(model => model.OriginCountry)
+            </span>
         </th>
         <th></th>
     </tr>

@@ -1,14 +1,14 @@
-﻿$(document).ready(function getBranchAddress(){
-    $('.displayOnMap').click(function () {
+﻿$(document).ready(() => {
+    $('.displayOnMap').click(() => {
         var prop = $(this).data('prop');
         parseAddressForMapAPI(prop)
     })
     function parseAddressForMapAPI(address) {
         addressStr = address.toString();
-        var parsedBySymbol = addressStr.split(", ");
-        var tempStr = [parsedBySymbol.length];
-        var parsedAddress = "";
-        for (var i = 0; i < parsedBySymbol.length;i++) {
+        let parsedBySymbol = addressStr.split(", ");
+        let tempStr = [parsedBySymbol.length];
+        let parsedAddress = "";
+        for (let i = 0; i < parsedBySymbol.length; i++) {
             tempStr[i] = parsedBySymbol[i].replaceAll(" ", "+");
             parsedAddress += tempStr[i] + ",";
         }
