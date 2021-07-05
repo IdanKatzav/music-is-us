@@ -2,11 +2,89 @@
 @{
     ViewBag.Title = "Index";
 }
-@Scripts.Render("~/Scripts/Stats.js");
+
 <script src="https://d3js.org/d3.v5.min.js" type="text/javascript"></script>
-<h2>Index</h2>
-<div class="pieChart"></div>
-<script>
-    var genereCount = JSON.parse('@Html.Raw(ViewBag.musicGenreJson)';
-    drawPieChart(genereCount);
-</script>
+<div class="stats">
+    <div class="single-stat" id="statistics-pie">
+        <p>The following chart shows the amount of music record by genre.</p>
+        <div class="pie" style="align-self:center"></div>
+        <p>hover over the graph to see the area:</p>
+        <p id="tooltip"></p>
+    </div>
+
+    <br /><br />
+</div>
+    <script>
+
+    // draw a pie
+    function drawPie(jsonData) {
+
+        // height and width of the svg
+        var h = 200;
+        var w = 200;
+
+        // inner and outer radius of the pie
+        var innerRadius = w / 4;
+        var outerRadius = w / 2;
+
+        // generate pie as function to be called and handel data
+        var pie = d3.pie().value(function (d) {
+            return d.count;
+        });
+
+        // create the color schim, d3 does that for us, generates 10 scale ordnal
+        var color = d3.schemeCategory10;
+
+        // will be used to generate the path attribute
+        var arc = d3.arc()
+          .innerRadius(innerRadius)
+          .outerRadius(outerRadius);
+
+        // create the svg canvas
+        var svg = d3.select('.pie')
+          .append('svg')
+          .attr('width', w)
+          .attr('height', h);
+
+        // set up groups of arcs
+        var arcs = svg.selectAll('g.arc')
+          .data(pie(jsonData))
+          .enter()
+          .append('g')
+          .attr('class', 'arc')
+          .attr('transform', 'translate(' + outerRadius + ', ' + outerRadius + ')')
+          .on("mouseover", function (d) {
+              d3.select('#tooltip')
+                .style("visibility", "visible")
+                  .text(d.data.genre);
+          })
+          .on("mousemove", function () {
+              d3.select('#tooltip')
+                .style("top", (event.pageY - 10) + "px")
+                .style("left", (event.pageX + 10) + "px");
+          })
+          .on("mouseout", function () {
+              d3.select('#tooltip')
+                .style("visibility", "hidden");
+          });
+
+        // add path to groups
+        arcs.append('path')
+          .attr('fill', function (d, i) {
+              return color[i];
+          })
+          .attr('d', arc);
+
+        // append text
+        arcs.append('text')
+          .attr("transform", function (d) {
+              return "translate(" + arc.centroid(d) + ")"; // get the center point of the shape
+          })
+          .attr("text-anchor", "middle")
+          .text(function (d) {
+              return d.value;
+          });
+    }
+    var musicByGenreJson = JSON.parse('@Html.Raw(ViewBag.musicGenreJson)');
+    drawPie(musicByGenreJson);
+    </script>
