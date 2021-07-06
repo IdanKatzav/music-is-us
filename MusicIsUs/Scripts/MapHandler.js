@@ -1,9 +1,11 @@
 ﻿$(document).ready(() => {
-    $('.displayOnMap').click(() => {
+    $('.displayOnMap').click(function() {
         var prop = $(this).data('prop');
+        console.log(prop);
         parseAddressForMapAPI(prop)
     })
     function parseAddressForMapAPI(address) {
+        console.log(address);
         addressStr = address.toString();
         let parsedBySymbol = addressStr.split(", ");
         let tempStr = [parsedBySymbol.length];
