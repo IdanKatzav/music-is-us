@@ -1,4 +1,4 @@
-﻿$(document).ready(() => {
+﻿$(document).ready(function() {
     $('.displayOnMap').click(function() {
         var prop = $(this).data('prop');
         console.log(prop);
