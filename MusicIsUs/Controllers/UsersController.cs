@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using MusicIsUs.Models;
+using System.Collections;
 
 namespace MusicIsUs.Controllers
 {
@@ -17,7 +18,16 @@ namespace MusicIsUs.Controllers
         // GET: Users
         public ActionResult Index()
         {
-            return View(db.Users.ToList());
+            var user = ((Users)System.Web.HttpContext.Current.Session["user"]);
+            bool isAdmin = user != null ? user.IsAdmin : false;
+            if (isAdmin)
+            {
+                return View(db.Users.ToList());
+            }
+            else
+            {
+                return RedirectToAction("NotFound", "Home");
+            }
         }
 
         // GET: Users/Details/5
@@ -114,6 +124,77 @@ namespace MusicIsUs.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        public ActionResult Login()
+        {
+            return View();
+        }
+
+        public ActionResult Register()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Login(string login, string password)
+        {
+            var userInDataBase = db.Users.Where(u => u.UserName.Equals(login, System.StringComparison.Ordinal) &&
+                                                 u.Password.Equals(password, System.StringComparison.Ordinal)).SingleOrDefault();
+
+            if (userInDataBase != null)
+            {
+                System.Web.HttpContext.Current.Session["user"] = userInDataBase;
+                return RedirectToAction("Index", "Home", new { id = userInDataBase.Id });
+            }
+
+            ViewBag.ErrMsg = "User name or password are incorrect.";
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Register(string login, string password, string passwordRep)
+        {
+            if (password == passwordRep)
+            {
+                var userInDataBase = db.Users.Where(u => u.UserName.Equals(login, System.StringComparison.Ordinal) &&
+                                                     u.Password.Equals(password, System.StringComparison.Ordinal)).SingleOrDefault();
+                if (userInDataBase == null)
+                {
+                    try
+                    {
+                        var user = db.Users.Add(new Users()
+                        {
+                            IsAdmin = false,
+                            Password = password,
+                            UserName = login
+                        });
+                        System.Web.HttpContext.Current.Session["user"] = user;
+                        db.SaveChanges();
+                        return RedirectToAction("Index", "Home", new { id = user.Id });
+                    }
+                    catch (Exception)
+                    {
+                        ViewBag.ErrMsg = "Internal Error. something went wrong.";
+                        return View();
+                    }
+                }
+
+                ViewBag.ErrMsg = "User with the user name " + login + " already exists";
+                return View();
+            }
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult LogOff()
+        {
+            System.Web.HttpContext.Current.Session["user"] = null;
+            return RedirectToAction("Index", "Home");
+        }
+
 
         protected override void Dispose(bool disposing)
         {

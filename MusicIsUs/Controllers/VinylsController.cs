@@ -17,9 +17,16 @@ namespace MusicIsUs.Controllers
         // GET: Vinyls
         public ActionResult Index()
         {
+            db.Configuration.LazyLoadingEnabled = false;
+            var user = ((Users)System.Web.HttpContext.Current.Session["user"]);
             ViewBag.originCountry = db.Vinyls.Select(vinyl => vinyl.OriginCountry).Distinct();
             ViewBag.artistName = db.Vinyls.Select(vinyl => vinyl.ArtistName).Distinct();
             ViewBag.genere = db.Vinyls.Select(vinyl => vinyl.Genere).Distinct();
+            if (user != null)
+            {
+                var userPopulated = db.Users.Include("LikedVinyls").SingleOrDefault(i => i.UserName == user.UserName);
+                ViewBag.Liked = userPopulated.LikedVinyls.ToList();
+            }
             return View(db.Vinyls.ToList());
         }
 
@@ -141,6 +148,30 @@ namespace MusicIsUs.Controllers
             db.Vinyls.Remove(vinyls);
             db.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        [HttpPost, ActionName("Like")]
+        public JsonResult Like(int id, bool like)
+        {
+            var user = ((Users)System.Web.HttpContext.Current.Session["user"]);
+            var userPopulated = db.Users.Include("LikedVinyls").SingleOrDefault(i => i.UserName == user.UserName);
+            if (user != null)
+            {
+                Vinyls vinyls = db.Vinyls.Find(id);
+                if (!like)
+                {
+                    userPopulated.LikedVinyls.Add(vinyls);
+                    db.SaveChanges();
+                    return Json(new { }, JsonRequestBehavior.AllowGet);
+                }
+                else
+                {
+                    userPopulated.LikedVinyls.Remove(vinyls);
+                    db.SaveChanges();
+                    return Json(new { }, JsonRequestBehavior.AllowGet);
+                }
+            }
+            return Json(new { message = "login please"}, JsonRequestBehavior.AllowGet);
         }
 
         protected override void Dispose(bool disposing)
