@@ -162,9 +162,6 @@ C:\Users\AVI\אידן קצב\לימודים\תואר 1\שנה ב\אינטרנט\
 C:\Users\AVI\אידן קצב\לימודים\תואר 1\שנה ב\אינטרנט\music-is-us\MusicIsUs\bin\MusicIsUs.dll
 C:\Users\AVI\אידן קצב\לימודים\תואר 1\שנה ב\אינטרנט\music-is-us\MusicIsUs\bin\MusicIsUs.pdb
 C:\Users\AVI\אידן קצב\לימודים\תואר 1\שנה ב\אינטרנט\music-is-us\MusicIsUs\obj\Debug\MusicIsUs.csprojResolveAssemblyReference.cache
-C:\Users\AVI\אידן קצב\לימודים\תואר 1\שנה ב\אינטרנט\music-is-us\MusicIsUs\obj\Debug\MusicIsUs.Migrations.Init.resources
-C:\Users\AVI\אידן קצב\לימודים\תואר 1\שנה ב\אינטרנט\music-is-us\MusicIsUs\obj\Debug\MusicIsUs.Migrations.dana.resources
-C:\Users\AVI\אידן קצב\לימודים\תואר 1\שנה ב\אינטרנט\music-is-us\MusicIsUs\obj\Debug\MusicIsUs.Migrations.dana1.resources
 C:\Users\AVI\אידן קצב\לימודים\תואר 1\שנה ב\אינטרנט\music-is-us\MusicIsUs\obj\Debug\WebApplication7.Migrations.Init1.resources
 C:\Users\AVI\אידן קצב\לימודים\תואר 1\שנה ב\אינטרנט\music-is-us\MusicIsUs\obj\Debug\MusicIsUs.csproj.GenerateResource.Cache
 C:\Users\AVI\אידן קצב\לימודים\תואר 1\שנה ב\אינטרנט\music-is-us\MusicIsUs\obj\Debug\MusicIsUs.dll
@@ -257,3 +254,4 @@ C:\Repo\music-is-us\MusicIsUs\obj\Debug\MusicIsUs.csproj.GenerateResource.Cache
 C:\Repo\music-is-us\MusicIsUs\obj\Debug\MusicIsUs.dll
 C:\Repo\music-is-us\MusicIsUs\obj\Debug\MusicIsUs.pdb
 G:\Repo\music-is-us\MusicIsUs\obj\Debug\MusicIsUs.Migrations.LikedInstruments.resources
+C:\Users\AVI\אידן קצב\לימודים\תואר 1\שנה ב\אינטרנט\music-is-us\MusicIsUs\obj\Debug\MusicIsUs.Migrations.LikedInstruments.resources

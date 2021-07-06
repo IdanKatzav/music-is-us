@@ -12,6 +12,7 @@ namespace MusicIsUs.Controllers
         private MusicIsUsContext dbConn = new MusicIsUsContext();
         public ActionResult Index()
         {
+            top5();
             return View();
         }
 

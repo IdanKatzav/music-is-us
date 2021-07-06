@@ -15,6 +15,31 @@
 <br/>
 <div class="row">
     <div class="col-md-5">
+        <ul class="list-group" id="vinylsTop">
+            <li class="list-group-item active">Top 5 Vinyls</li>
+            @for (var i = 0; ViewBag.topVinyls != null &&
+                                 i < Enumerable.Count(ViewBag.topVinyls); i++)
+            {
+                    var vin = ViewBag.recommendedRestaurants[i];
+                <li class="list-group-item">
+                    @vin.Name
+                    <span class="badge badge-primary badge-pill">@i</span>
+                </li>
+            }
+        </ul>
+    </div>
+    <div class="col-md-5 col-md-offset-1">
+        <ul class="list-group" id="instrumentsTop">
+            <li class="list-group-item active">Cras justo odio</li>
+            <li class="list-group-item">Dapibus ac facilisis in</li>
+            <li class="list-group-item">Morbi leo risus</li>
+            <li class="list-group-item">Porta ac consectetur ac</li>
+            <li class="list-group-item">Vestibulum at eros</li>
+        </ul>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-5">
         <div class="videoPlayer">
             <iframe width="400" height="250" src="https://www.youtube.com/embed/rt4zLhT2opc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
@@ -25,3 +50,4 @@
         </div>
     </div>
 </div>
+
