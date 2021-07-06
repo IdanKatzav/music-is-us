@@ -20,6 +20,14 @@ namespace MusicIsUs.Controllers
                 .ToList();
             var groupMusicByGenreJson = JsonConvert.SerializeObject(groupMusicByGenre);
             ViewBag.musicGenreJson = groupMusicByGenreJson;
+
+            var mostPopularArtist = db.Vinyls.Where(r => r.LikedUsers.Count() != 0)
+                .Select(i => new { name = i.ArtistName, count = i.LikedUsers.Count() })
+                .GroupBy(r => r.name)
+                .Select(i => new { name = i.Key.ToString(), count = i.Sum(s => s.count)})
+                .ToList();
+            var mostPopularArtistJson = JsonConvert.SerializeObject(mostPopularArtist);
+            ViewBag.popularArtistsJson = mostPopularArtistJson;
             return View();
         }
     }
