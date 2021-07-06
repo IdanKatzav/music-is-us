@@ -33,16 +33,21 @@ namespace MusicIsUs.Controllers
         // GET: Users/Details/5
         public ActionResult Details(int? id)
         {
-            if (id == null)
+            var user = ((Users)System.Web.HttpContext.Current.Session["user"]);
+            if (user != null && (user.IsAdmin || user.Id == id))
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                if (id == null)
+                {
+                    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                }
+                Users users = db.Users.Find(id);
+                if (users == null)
+                {
+                    return HttpNotFound();
+                }
+                return View(users);
             }
-            Users users = db.Users.Find(id);
-            if (users == null)
-            {
-                return HttpNotFound();
-            }
-            return View(users);
+            return HttpNotFound();
         }
 
         // GET: Users/Create
@@ -139,16 +144,22 @@ namespace MusicIsUs.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Login(string login, string password)
         {
-            var userInDataBase = db.Users.Where(u => u.UserName.Equals(login, System.StringComparison.Ordinal) &&
-                                                 u.Password.Equals(password, System.StringComparison.Ordinal)).SingleOrDefault();
-
-            if (userInDataBase != null)
+            var exists = db.Users.Where(u => u.UserName.Equals(login, System.StringComparison.Ordinal)).SingleOrDefault();
+            if (exists != null)
             {
-                System.Web.HttpContext.Current.Session["user"] = userInDataBase;
-                return RedirectToAction("Index", "Home", new { id = userInDataBase.Id });
+                var userInDataBase = db.Users.Where(u => u.UserName.Equals(login, System.StringComparison.Ordinal) &&
+                                                     u.Password.Equals(password, System.StringComparison.Ordinal)).SingleOrDefault();
+                if (userInDataBase != null)
+                {
+                    System.Web.HttpContext.Current.Session["user"] = userInDataBase;
+                    return RedirectToAction("Index", "Home", new { id = userInDataBase.Id });
+                }
+
+                ViewBag.ErrMsg = "User name or password are incorrect.";
+                return View();
             }
 
-            ViewBag.ErrMsg = "User name or password are incorrect.";
+            ViewBag.ErrMsg = "User with that username does not exist";
             return View();
         }
 

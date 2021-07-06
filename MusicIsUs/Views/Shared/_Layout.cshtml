@@ -21,11 +21,19 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("Vinyls", "Index", "Vinyls")</li>
-                    <li>@Html.ActionLink("Instruments", "Index", "Instruments")</li>
-                    <li>@Html.ActionLink("Stats","Index","Stats")</li>
+                    @{
+                        var user = ((MusicIsUs.Models.Users)System.Web.HttpContext.Current.Session["user"]);
+
+                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                        <li>@Html.ActionLink("Vinyls", "Index", "Vinyls")</li>
+                        <li>@Html.ActionLink("Instruments", "Index", "Instruments")</li>
+                        if (user != null && user.IsAdmin)
+                        {
+                            <li>@Html.ActionLink("Stats", "Index", "Stats")</li>
+                            <li>@Html.ActionLink("User Management", "Index", "Users")</li>
+                        }
+                    }
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
@@ -35,7 +43,7 @@
         @RenderBody()
         <hr />
     </div>
-    
+
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/jqueryval")
     @Scripts.Render("~/bundles/bootstrap")
