@@ -44,6 +44,22 @@ textarea {
     margin-bottom: 15px;
 }
 
-    .error-actions .btn {
-        margin-right: 10px;
-    }
+.error-actions .btn {
+    margin-right: 10px;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    font-size: 18px;
+}
+
+.single-stat {
+    border: 3px;
+    border-color: black;
+    border-style: double;
+    padding: 10px;
+    width: 400px;
+    text-align: center;
+}

@@ -201,6 +201,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InstrumentsController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\StatsController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Controllers\VinylsController.cs" />
     <Compile Include="Global.asax.cs">
@@ -319,6 +320,7 @@
     <Content Include="Views\Users\Login.cshtml" />
     <Content Include="Views\Users\Register.cshtml" />
     <Content Include="Views\Home\NotFound.cshtml" />
+    <Content Include="Views\Stats\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
