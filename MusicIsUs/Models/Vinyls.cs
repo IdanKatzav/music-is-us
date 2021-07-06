@@ -17,10 +17,6 @@ namespace MusicIsUs.Models
         [Display(Name = "Artist Name")]
         public string ArtistName { get; set; }
 
-        [Required(ErrorMessage = "Please enter valied publish date")]
-        [Display(Name = "Publish Date")]
-        public DateTime PublishDate { get; set; }
-
         [Required(ErrorMessage = "Please enter Genere")]
         [Display(Name = "Genere")]
         public string Genere { get; set; }
