@@ -33,3 +33,19 @@ textarea {
   margin-right: auto;
   width: 50%;
 }
+
+.stats {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    font-size: 18px;
+}
+
+.single-stat {
+    border: 3px;
+    border-color: black;
+    border-style: double;
+    padding: 10px;
+    width: 400px;
+    text-align: center;
+}
