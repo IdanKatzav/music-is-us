@@ -257,3 +257,4 @@ C:\Repo\music-is-us\MusicIsUs\obj\Debug\MusicIsUs.csproj.GenerateResource.Cache
 C:\Repo\music-is-us\MusicIsUs\obj\Debug\MusicIsUs.dll
 C:\Repo\music-is-us\MusicIsUs\obj\Debug\MusicIsUs.pdb
 G:\Repo\music-is-us\MusicIsUs\obj\Debug\MusicIsUs.Migrations.LikedInstruments.resources
+G:\Repo\music-is-us\MusicIsUs\obj\Debug\MusicIsUs.Migrations.removeDate.resources
