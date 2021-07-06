@@ -207,21 +207,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202106140704002_Init.cs" />
-    <Compile Include="Migrations\202106140704002_Init.Designer.cs">
-      <DependentUpon>202106140704002_Init.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106151413416_dana.cs" />
-    <Compile Include="Migrations\202106151413416_dana.Designer.cs">
-      <DependentUpon>202106151413416_dana.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106151425580_dana1.cs" />
-    <Compile Include="Migrations\202106151425580_dana1.Designer.cs">
-      <DependentUpon>202106151425580_dana1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\202106140731509_Init1.cs" />
     <Compile Include="Migrations\202106140731509_Init1.Designer.cs">
       <DependentUpon>202106140731509_Init1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107061545437_LikedInstruments.cs" />
+    <Compile Include="Migrations\202107061545437_LikedInstruments.Designer.cs">
+      <DependentUpon>202107061545437_LikedInstruments.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -262,6 +254,7 @@
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\Users.js" />
     <Content Include="Scripts\Vinyls.js" />
+    <Content Include="Scripts\Wheather.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -335,17 +328,11 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202106140704002_Init.resx">
-      <DependentUpon>202106140704002_Init.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106151413416_dana.resx">
-      <DependentUpon>202106151413416_dana.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106151425580_dana1.resx">
-      <DependentUpon>202106151425580_dana1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106140731509_Init1.resx">
       <DependentUpon>202106140731509_Init1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107061545437_LikedInstruments.resx">
+      <DependentUpon>202107061545437_LikedInstruments.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

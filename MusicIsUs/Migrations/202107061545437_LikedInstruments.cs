@@ -3,10 +3,20 @@ namespace MusicIsUs.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class dana : DbMigration
+    public partial class LikedInstruments : DbMigration
     {
         public override void Up()
         {
+            CreateTable(
+                "dbo.Branches",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        City = c.String(nullable: false),
+                        Street = c.String(nullable: false),
+                    })
+                .PrimaryKey(t => t.Id);
+            
             CreateTable(
                 "dbo.Instruments",
                 c => new
@@ -27,11 +37,8 @@ namespace MusicIsUs.Migrations
                         UserName = c.String(nullable: false),
                         Password = c.String(nullable: false),
                         IsAdmin = c.Boolean(nullable: false),
-                        Instruments_Id = c.Int(),
                     })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Instruments", t => t.Instruments_Id)
-                .Index(t => t.Instruments_Id);
+                .PrimaryKey(t => t.Id);
             
             CreateTable(
                 "dbo.Vinyls",
@@ -45,6 +52,19 @@ namespace MusicIsUs.Migrations
                         OriginCountry = c.String(nullable: false),
                     })
                 .PrimaryKey(t => t.Id);
+            
+            CreateTable(
+                "dbo.UsersInstruments",
+                c => new
+                    {
+                        Users_Id = c.Int(nullable: false),
+                        Instruments_Id = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => new { t.Users_Id, t.Instruments_Id })
+                .ForeignKey("dbo.Users", t => t.Users_Id, cascadeDelete: true)
+                .ForeignKey("dbo.Instruments", t => t.Instruments_Id, cascadeDelete: true)
+                .Index(t => t.Users_Id)
+                .Index(t => t.Instruments_Id);
             
             CreateTable(
                 "dbo.VinylsUsers",
@@ -63,16 +83,20 @@ namespace MusicIsUs.Migrations
         
         public override void Down()
         {
-            DropForeignKey("dbo.Users", "Instruments_Id", "dbo.Instruments");
             DropForeignKey("dbo.VinylsUsers", "Users_Id", "dbo.Users");
             DropForeignKey("dbo.VinylsUsers", "Vinyls_Id", "dbo.Vinyls");
+            DropForeignKey("dbo.UsersInstruments", "Instruments_Id", "dbo.Instruments");
+            DropForeignKey("dbo.UsersInstruments", "Users_Id", "dbo.Users");
             DropIndex("dbo.VinylsUsers", new[] { "Users_Id" });
             DropIndex("dbo.VinylsUsers", new[] { "Vinyls_Id" });
-            DropIndex("dbo.Users", new[] { "Instruments_Id" });
+            DropIndex("dbo.UsersInstruments", new[] { "Instruments_Id" });
+            DropIndex("dbo.UsersInstruments", new[] { "Users_Id" });
             DropTable("dbo.VinylsUsers");
+            DropTable("dbo.UsersInstruments");
             DropTable("dbo.Vinyls");
             DropTable("dbo.Users");
             DropTable("dbo.Instruments");
+            DropTable("dbo.Branches");
         }
     }
 }

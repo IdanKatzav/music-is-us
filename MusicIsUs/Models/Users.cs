@@ -17,6 +17,6 @@ namespace MusicIsUs.Models
         public string Password { get; set; }
         public bool IsAdmin { get; set; }
         public virtual ICollection<Vinyls> LikedVinyls { get; set; }
-        //public virtual ICollection<Store> LikedStores { get; set; }
+        public virtual ICollection<Instruments> LikedInstruments { get; set; }
     }
 }

@@ -7,13 +7,13 @@ namespace MusicIsUs.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class dana : IMigrationMetadata
+    public sealed partial class LikedInstruments : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(dana));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(LikedInstruments));
         
         string IMigrationMetadata.Id
         {
-            get { return "202106151413416_dana"; }
+            get { return "202107061545437_LikedInstruments"; }
         }
         
         string IMigrationMetadata.Source

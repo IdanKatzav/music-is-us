@@ -153,9 +153,6 @@ G:\Repo\music-is-us\MusicIsUs\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 G:\Repo\music-is-us\MusicIsUs\obj\Debug\MusicIsUs.csprojResolveAssemblyReference.cache
 G:\Repo\music-is-us\MusicIsUs\obj\Debug\MusicIsUs.csproj.GenerateResource.Cache
 G:\Repo\music-is-us\MusicIsUs\obj\Debug\WebApplication7.Migrations.Init1.resources
-G:\Repo\music-is-us\MusicIsUs\obj\Debug\MusicIsUs.Migrations.Init.resources
-G:\Repo\music-is-us\MusicIsUs\obj\Debug\MusicIsUs.Migrations.dana.resources
-G:\Repo\music-is-us\MusicIsUs\obj\Debug\MusicIsUs.Migrations.dana1.resources
 G:\Repo\music-is-us\MusicIsUs\obj\Debug\MusicIsUs.dll
 G:\Repo\music-is-us\MusicIsUs\obj\Debug\MusicIsUs.pdb
 G:\Repo\music-is-us\MusicIsUs\bin\MusicIsUs.dll.config
@@ -259,3 +256,4 @@ C:\Repo\music-is-us\MusicIsUs\obj\Debug\WebApplication7.Migrations.Init1.resourc
 C:\Repo\music-is-us\MusicIsUs\obj\Debug\MusicIsUs.csproj.GenerateResource.Cache
 C:\Repo\music-is-us\MusicIsUs\obj\Debug\MusicIsUs.dll
 C:\Repo\music-is-us\MusicIsUs\obj\Debug\MusicIsUs.pdb
+G:\Repo\music-is-us\MusicIsUs\obj\Debug\MusicIsUs.Migrations.LikedInstruments.resources
