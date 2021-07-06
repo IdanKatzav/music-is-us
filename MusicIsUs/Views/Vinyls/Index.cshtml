@@ -2,6 +2,8 @@
 
 @{
     ViewBag.Title = "Index";
+    var VinylsColl = ViewBag.Liked;
+    int index = 0;
 }
 
 <h2>Vinyls</h2>
@@ -103,6 +105,16 @@
                 @Html.ActionLink("Details", "Details", new { id = item.Id }) |
                 @Html.ActionLink("Delete", "Delete", new { id = item.Id })
             </td>
+            @if (ViewBag.Liked != null)
+            {
+                bool exists = VinylsColl.Contains(item);
+                string btnClass = (exists) ? "btn-light" : "btn-primary";
+                string btnText = (exists) ? "Liked" : "Like";
+                <td>
+                    <button type="button" class="like btn @btnClass" id="like-@index" data-vinyl-id="@item.Id" data-liked="@exists">@btnText</button>
+                </td>
+                index++;
+            }
         </tr>
     }
 

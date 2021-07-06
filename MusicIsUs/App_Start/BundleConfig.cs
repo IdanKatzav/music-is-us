@@ -23,9 +23,15 @@ namespace MusicIsUs
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/siteScripts").Include(
+            "~/Scripts/users.js",
+            "~/Scripts/Vinyls.js"));
+
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/site.css",
+                      "~/Content/Login.css"
+                      ));
         }
     }
 }

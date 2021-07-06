@@ -46,5 +46,10 @@ namespace MusicIsUs.Controllers
             }
             return View("Contact", returnDataQuery.ToList());
         }
+
+        public ActionResult NotFound()
+        {
+            return View();
+        }
     }
 }
