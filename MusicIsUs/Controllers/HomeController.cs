@@ -12,7 +12,9 @@ namespace MusicIsUs.Controllers
         private MusicIsUsContext dbConn = new MusicIsUsContext();
         public ActionResult Index()
         {
+            ViewBag.user = Session["user"];
             top5();
+            findUserRecomendations();
             return View();
         }
 
@@ -69,7 +71,7 @@ namespace MusicIsUs.Controllers
 
             if (currentUser != null)
             {
-                int numberOfRecords = 5;
+                int numberOfRecords = 3;
                 
                 // Vinyls
 
@@ -86,7 +88,7 @@ namespace MusicIsUs.Controllers
 
                 if (recommVinyls.Count() == 0)
                 {
-                    recommVinyls = dbConn.Vinyls.OrderByDescending(str => str.LikedUsers.Count()).Take(1).ToList();
+                    recommVinyls = dbConn.Vinyls.OrderByDescending(str => str.LikedUsers.Count()).Take(2).ToList();
                 }
 
                 ViewBag.recommVinyls = recommVinyls;
@@ -106,10 +108,10 @@ namespace MusicIsUs.Controllers
 
                 if (recommInstruments.Count() == 0)
                 {
-                    recommInstruments = dbConn.Instruments.OrderByDescending(inst => inst.LikedUsers.Count()).Take(1).ToList();
+                    recommInstruments = dbConn.Instruments.OrderByDescending(inst => inst.LikedUsers.Count()).Take(2).ToList();
                 }
 
-                ViewBag.recommInstruments = recommVinyls; 
+                ViewBag.recommInstruments = recommInstruments; 
             }
 
             return View();
