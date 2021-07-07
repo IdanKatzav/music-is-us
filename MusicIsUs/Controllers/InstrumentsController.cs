@@ -96,16 +96,21 @@ namespace MusicIsUs.Controllers
         // GET: Instruments/Edit/5
         public ActionResult Edit(int? id)
         {
-            if (id == null)
+            var user = ((Users)System.Web.HttpContext.Current.Session["user"]);
+            if (user != null && user.IsAdmin)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                if (id == null)
+                {
+                    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                }
+                Instruments instruments = db.Instruments.Find(id);
+                if (instruments == null)
+                {
+                    return HttpNotFound();
+                }
+                return View(instruments);
             }
-            Instruments instruments = db.Instruments.Find(id);
-            if (instruments == null)
-            {
-                return HttpNotFound();
-            }
-            return View(instruments);
+            return HttpNotFound();
         }
 
         // POST: Instruments/Edit/5
@@ -115,28 +120,38 @@ namespace MusicIsUs.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id,Name,Type,MadeInCountry,Brand")] Instruments instruments)
         {
-            if (ModelState.IsValid)
+            var user = ((Users)System.Web.HttpContext.Current.Session["user"]);
+            if (user != null && user.IsAdmin)
             {
-                db.Entry(instruments).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                if (ModelState.IsValid)
+                {
+                    db.Entry(instruments).State = EntityState.Modified;
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+                return View(instruments);
             }
-            return View(instruments);
+            return HttpNotFound();
         }
 
         // GET: Instruments/Delete/5
         public ActionResult Delete(int? id)
         {
-            if (id == null)
+            var user = ((Users)System.Web.HttpContext.Current.Session["user"]);
+            if (user != null && user.IsAdmin)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                if (id == null)
+                {
+                    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                }
+                Instruments instruments = db.Instruments.Find(id);
+                if (instruments == null)
+                {
+                    return HttpNotFound();
+                }
+                return View(instruments);
             }
-            Instruments instruments = db.Instruments.Find(id);
-            if (instruments == null)
-            {
-                return HttpNotFound();
-            }
-            return View(instruments);
+            return HttpNotFound();
         }
 
         // POST: Instruments/Delete/5
@@ -144,10 +159,15 @@ namespace MusicIsUs.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Instruments instruments = db.Instruments.Find(id);
-            db.Instruments.Remove(instruments);
-            db.SaveChanges();
-            return RedirectToAction("Index");
+            var user = ((Users)System.Web.HttpContext.Current.Session["user"]);
+            if (user != null && user.IsAdmin)
+            {
+                Instruments instruments = db.Instruments.Find(id);
+                db.Instruments.Remove(instruments);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return HttpNotFound();
         }
 
         protected override void Dispose(bool disposing)

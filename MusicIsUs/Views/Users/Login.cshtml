@@ -26,6 +26,13 @@
         <!-- Remind Passowrd -->
         <div id="formFooter">
             <a class="underlineHover" href="#">Forgot Password?</a>
+            @if (ViewBag.ErrMsg != null)
+            {
+
+                <div class="alert alert-danger" role="alert">
+                    @ViewBag.ErrMsg
+                </div>
+            }
         </div>
 
     </div>

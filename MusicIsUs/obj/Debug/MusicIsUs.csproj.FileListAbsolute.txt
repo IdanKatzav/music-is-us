@@ -254,4 +254,8 @@ C:\Repo\music-is-us\MusicIsUs\obj\Debug\MusicIsUs.csproj.GenerateResource.Cache
 C:\Repo\music-is-us\MusicIsUs\obj\Debug\MusicIsUs.dll
 C:\Repo\music-is-us\MusicIsUs\obj\Debug\MusicIsUs.pdb
 G:\Repo\music-is-us\MusicIsUs\obj\Debug\MusicIsUs.Migrations.LikedInstruments.resources
+<<<<<<< HEAD
 C:\Users\AVI\אידן קצב\לימודים\תואר 1\שנה ב\אינטרנט\music-is-us\MusicIsUs\obj\Debug\MusicIsUs.Migrations.LikedInstruments.resources
+=======
+G:\Repo\music-is-us\MusicIsUs\obj\Debug\MusicIsUs.Migrations.removeDate.resources
+>>>>>>> d0737209fd1b0a69f5267ca8248f72ae6bdeee7e

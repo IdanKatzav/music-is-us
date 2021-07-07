@@ -25,6 +25,7 @@ namespace MusicIsUs.Controllers
             if (user != null)
             {
                 var userPopulated = db.Users.Include("LikedVinyls").SingleOrDefault(i => i.UserName == user.UserName);
+                ViewBag.user = userPopulated;
                 ViewBag.Liked = userPopulated.LikedVinyls.ToList();
             }
             return View(db.Vinyls.ToList());
@@ -96,16 +97,21 @@ namespace MusicIsUs.Controllers
         // GET: Vinyls/Edit/5
         public ActionResult Edit(int? id)
         {
-            if (id == null)
+            var user = ((Users)System.Web.HttpContext.Current.Session["user"]);
+            if (user != null && user.IsAdmin)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                if (id == null)
+                {
+                    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                }
+                Vinyls vinyls = db.Vinyls.Find(id);
+                if (vinyls == null)
+                {
+                    return HttpNotFound();
+                }
+                return View(vinyls);
             }
-            Vinyls vinyls = db.Vinyls.Find(id);
-            if (vinyls == null)
-            {
-                return HttpNotFound();
-            }
-            return View(vinyls);
+            return HttpNotFound();
         }
 
         // POST: Vinyls/Edit/5
@@ -127,16 +133,21 @@ namespace MusicIsUs.Controllers
         // GET: Vinyls/Delete/5
         public ActionResult Delete(int? id)
         {
-            if (id == null)
+            var user = ((Users)System.Web.HttpContext.Current.Session["user"]);
+            if (user != null && user.IsAdmin)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                if (id == null)
+                {
+                    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                }
+                Vinyls vinyls = db.Vinyls.Find(id);
+                if (vinyls == null)
+                {
+                    return HttpNotFound();
+                }
+                return View(vinyls);
             }
-            Vinyls vinyls = db.Vinyls.Find(id);
-            if (vinyls == null)
-            {
-                return HttpNotFound();
-            }
-            return View(vinyls);
+            return HttpNotFound();
         }
 
         // POST: Vinyls/Delete/5
@@ -144,10 +155,15 @@ namespace MusicIsUs.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Vinyls vinyls = db.Vinyls.Find(id);
-            db.Vinyls.Remove(vinyls);
-            db.SaveChanges();
-            return RedirectToAction("Index");
+            var user = ((Users)System.Web.HttpContext.Current.Session["user"]);
+            if (user != null && user.IsAdmin)
+            {
+                Vinyls vinyls = db.Vinyls.Find(id);
+                db.Vinyls.Remove(vinyls);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return HttpNotFound();
         }
 
         [HttpPost, ActionName("Like")]
@@ -171,7 +187,7 @@ namespace MusicIsUs.Controllers
                     return Json(new { }, JsonRequestBehavior.AllowGet);
                 }
             }
-            return Json(new { message = "login please"}, JsonRequestBehavior.AllowGet);
+            return Json(new { message = "login please" }, JsonRequestBehavior.AllowGet);
         }
 
         protected override void Dispose(bool disposing)

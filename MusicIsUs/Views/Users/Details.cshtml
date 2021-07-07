@@ -1,7 +1,9 @@
 ﻿@model MusicIsUs.Models.Users
+@using MusicIsUs.Models
 
 @{
     ViewBag.Title = "Details";
+    Users activeUser = ((Users)Session["user"]);
 }
 
 <h2>Details</h2>
@@ -26,13 +28,15 @@
             @Html.DisplayFor(model => model.Password)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.IsAdmin)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.IsAdmin)
-        </dd>
+        @if (activeUser != null && activeUser.IsAdmin)
+        {
+            <dt>
+                @Html.DisplayNameFor(model => model.IsAdmin)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.IsAdmin)
+            </dd>
+        }
 
     </dl>
 </div>
