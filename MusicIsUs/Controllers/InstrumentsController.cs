@@ -17,11 +17,16 @@ namespace MusicIsUs.Controllers
         // GET: Instruments
         public ActionResult Index()
         {
-            ViewBag.name = db.Instruments.Select(instrument => instrument.Name).Distinct();
-            ViewBag.type = db.Instruments.Select(instrument => instrument.Type).Distinct();
-            ViewBag.madeInCountry = db.Instruments.Select(instrument => instrument.MadeInCountry).Distinct();
-            ViewBag.brand = db.Instruments.Select(instrument => instrument.Brand).Distinct();
-            return View(db.Instruments.ToList());
+            var user = ((Users)System.Web.HttpContext.Current.Session["user"]);
+            if (user != null)
+            {
+                ViewBag.name = db.Instruments.Select(instrument => instrument.Name).Distinct();
+                ViewBag.type = db.Instruments.Select(instrument => instrument.Type).Distinct();
+                ViewBag.madeInCountry = db.Instruments.Select(instrument => instrument.MadeInCountry).Distinct();
+                ViewBag.brand = db.Instruments.Select(instrument => instrument.Brand).Distinct();
+                return View(db.Instruments.ToList());
+            }
+            return RedirectToAction("NotFound", "Home");
         }
 
         // GET: Instruments/Details/5

@@ -26,12 +26,32 @@ textarea {
     position:relative;
     left:25%;
 }
- /*set an image in center*/
-.center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
+.multi-column-text {
+    column-count: 4;
+    column-gap: 30px;
+    column-rule-style: solid;
+    column-rule-width: 1px;
+    column-rule-color: lightblue;
+}
+.main-aside {
+    width: 15%;
+    padding: 15px;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    height: 100%;
+}
+    /*set an image in center*/
+    .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    transition: width 2s;
+}
+
+.center:hover {
+    width: 60%
 }
 
 .error-template {
