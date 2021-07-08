@@ -26,12 +26,15 @@
 
                         <li>@Html.ActionLink("Home", "Index", "Home")</li>
                         <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                        <li>@Html.ActionLink("Vinyls", "Index", "Vinyls")</li>
-                        <li>@Html.ActionLink("Instruments", "Index", "Instruments")</li>
-                        if (user != null && user.IsAdmin)
+                        if (user != null)
                         {
-                            <li>@Html.ActionLink("Stats", "Index", "Stats")</li>
-                            <li>@Html.ActionLink("User Management", "Index", "Users")</li>
+                            <li>@Html.ActionLink("Vinyls", "Index", "Vinyls")</li>
+                            <li>@Html.ActionLink("Instruments", "Index", "Instruments")</li>
+                            if (user.IsAdmin)
+                            {
+                                <li>@Html.ActionLink("Stats", "Index", "Stats")</li>
+                                <li>@Html.ActionLink("User Management", "Index", "Users")</li>
+                            }
                         }
                     }
                 </ul>
