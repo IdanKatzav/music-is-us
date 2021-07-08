@@ -17,18 +17,19 @@ namespace MusicIsUs.Controllers
         // GET: Vinyls
         public ActionResult Index()
         {
-            db.Configuration.LazyLoadingEnabled = false;
             var user = ((Users)System.Web.HttpContext.Current.Session["user"]);
-            ViewBag.originCountry = db.Vinyls.Select(vinyl => vinyl.OriginCountry).Distinct();
-            ViewBag.artistName = db.Vinyls.Select(vinyl => vinyl.ArtistName).Distinct();
-            ViewBag.genere = db.Vinyls.Select(vinyl => vinyl.Genere).Distinct();
             if (user != null)
             {
+                db.Configuration.LazyLoadingEnabled = false;
+                ViewBag.originCountry = db.Vinyls.Select(vinyl => vinyl.OriginCountry).Distinct();
+                ViewBag.artistName = db.Vinyls.Select(vinyl => vinyl.ArtistName).Distinct();
+                ViewBag.genere = db.Vinyls.Select(vinyl => vinyl.Genere).Distinct();
                 var userPopulated = db.Users.Include("LikedVinyls").SingleOrDefault(i => i.UserName == user.UserName);
                 ViewBag.user = userPopulated;
                 ViewBag.Liked = userPopulated.LikedVinyls.ToList();
+                return View(db.Vinyls.ToList());
             }
-            return View(db.Vinyls.ToList());
+            return RedirectToAction("NotFound", "Home");
         }
 
         // GET: Vinyls/Details/5
