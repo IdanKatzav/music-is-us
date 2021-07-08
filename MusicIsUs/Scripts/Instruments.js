@@ -1,8 +1,8 @@
 ﻿$(".like").click(function () {
     let btn = this;
-    $.post("/Vinyls/Like",
+    $.post("/Instruments/Like",
         {
-            id: $(btn).data("vinyl-id"),
+            id: $(btn).data("instrument-id"),
             like: $(btn).data("liked")
         },
         function () {

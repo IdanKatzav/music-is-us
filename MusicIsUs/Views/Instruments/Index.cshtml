@@ -2,7 +2,9 @@
 
 @{
     ViewBag.Title = "Index";
+    var InstrumentColl = ViewBag.Liked;
     var user = (MusicIsUs.Models.Users)ViewBag.user;
+    int index = 0;
 }
 
 <h2>Instruments</h2>
@@ -107,11 +109,11 @@
             }
             @if (ViewBag.Liked != null)
             {
-                bool exists = VinylsColl.Contains(item);
+                bool exists = InstrumentColl.Contains(item);
                 string btnClass = (exists) ? "btn-light" : "btn-primary";
                 string btnText = (exists) ? "Liked" : "Like";
                 <td>
-                    <button type="button" class="like btn @btnClass" id="like-@index" data-vinyl-id="@item.Id" data-liked="@exists">@btnText</button>
+                    <button type="button" class="like btn @btnClass" id="like-@index" data-instrument-id="@item.Id" data-liked="@exists">@btnText</button>
                 </td>
                 index++;
             }

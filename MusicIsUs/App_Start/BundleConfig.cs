@@ -25,7 +25,8 @@ namespace MusicIsUs
 
             bundles.Add(new ScriptBundle("~/bundles/siteScripts").Include(
             "~/Scripts/users.js",
-            "~/Scripts/Vinyls.js"));
+            "~/Scripts/Vinyls.js",
+            "~/Scripts/Instruments.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",

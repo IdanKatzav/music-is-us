@@ -20,10 +20,14 @@ namespace MusicIsUs.Controllers
             var user = ((Users)System.Web.HttpContext.Current.Session["user"]);
             if (user != null)
             {
+                db.Configuration.LazyLoadingEnabled = false;
                 ViewBag.name = db.Instruments.Select(instrument => instrument.Name).Distinct();
                 ViewBag.type = db.Instruments.Select(instrument => instrument.Type).Distinct();
                 ViewBag.madeInCountry = db.Instruments.Select(instrument => instrument.MadeInCountry).Distinct();
                 ViewBag.brand = db.Instruments.Select(instrument => instrument.Brand).Distinct();
+                var userPopulated = db.Users.Include("LikedInstruments").SingleOrDefault(i => i.UserName == user.UserName);
+                ViewBag.user = userPopulated;
+                ViewBag.Liked = userPopulated.LikedInstruments.ToList();
                 return View(db.Instruments.ToList());
             }
             return RedirectToAction("NotFound", "Home");
