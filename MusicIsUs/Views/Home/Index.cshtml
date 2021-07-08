@@ -125,7 +125,7 @@
                     @for (int i = 0; ViewBag.recommVinyls != null && i < Enumerable.Count(ViewBag.recommVinyls); i++)
                     {
                         var vin = ViewBag.recommVinyls[i];
-                        <div class="col-md-3 col-md-offset-1 card-new">
+                        <div class="col-md-2 col-md-offset-1 card-new">
                             <div class="card-container">
                                 <h4><b>@vin.Name</b></h4>
                                 <p>@("Genre: " + vin.Genere + ", ")</p>
@@ -144,7 +144,7 @@
                     @for (int i = 0; ViewBag.recommInstruments != null && i < Enumerable.Count(ViewBag.recommInstruments); i++)
                     {
                         var inst = ViewBag.recommInstruments[i];
-                        <div class="col-md-3 col-md-offset-1 card-new">
+                        <div class="col-md-2 col-md-offset-1 card-new">
                             <div class="card-container">
                                 <h4><b>@inst.Name</b></h4>
                                 <p>@("Type: " + inst.Type + ", ")</p>
