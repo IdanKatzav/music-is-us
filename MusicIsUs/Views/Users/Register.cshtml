@@ -1,6 +1,7 @@
 ﻿
 @{
     ViewBag.Title = "Register";
+    var instruments = (List<MusicIsUs.Models.Instruments>)ViewBag.instruments;
 }
 
 
@@ -18,6 +19,14 @@
             <input type="text" id="login" class="fadeIn second" name="login" placeholder="Username">
             <input type="password" id="password" class="fadeIn third" name="password" placeholder="Passowrd">
             <input type="password" id="passwordRep" class="fadeIn third" name="passwordRep" placeholder="Repeat Password">
+            <select name="instrument">
+                @foreach (var instument in instruments)
+                {
+                    <option value="@instument.Id">
+                        @instument.Name
+                    </option>
+                }
+            </select>
             <input type="submit" class="fadeIn fourth" value="Register Now!">
         </form>
 

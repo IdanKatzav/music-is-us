@@ -137,6 +137,7 @@ namespace MusicIsUs.Controllers
 
         public ActionResult Register()
         {
+            ViewBag.instruments = db.Instruments.ToList();
             return View();
         }
 
@@ -165,7 +166,7 @@ namespace MusicIsUs.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Register(string login, string password, string passwordRep)
+        public ActionResult Register(string login, string password, string passwordRep, int instrument)
         {
             if (password == passwordRep)
             {
@@ -182,6 +183,10 @@ namespace MusicIsUs.Controllers
                             UserName = login
                         });
                         System.Web.HttpContext.Current.Session["user"] = user;
+                        db.SaveChanges();
+                        var userPopulated = db.Users.Include("LikedInstruments").SingleOrDefault(i => i.UserName == login);
+                        var instrumentObj = db.Instruments.SingleOrDefault(o => o.Id == instrument);
+                        userPopulated.LikedInstruments.Add(instrumentObj);
                         db.SaveChanges();
                         return RedirectToAction("Index", "Home", new { id = user.Id });
                     }

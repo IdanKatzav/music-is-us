@@ -170,6 +170,31 @@ namespace MusicIsUs.Controllers
             return HttpNotFound();
         }
 
+        [HttpPost, ActionName("Like")]
+        public JsonResult Like(int id, bool like)
+        {
+            var user = ((Users)System.Web.HttpContext.Current.Session["user"]);
+            var userPopulated = db.Users.Include("LikedInstruments").SingleOrDefault(i => i.UserName == user.UserName);
+            if (user != null)
+            {
+                Instruments instrument = db.Instruments.Find(id);
+                if (!like)
+                {
+                    userPopulated.LikedInstruments.Add(instrument);
+                    db.SaveChanges();
+                    return Json(new { }, JsonRequestBehavior.AllowGet);
+                }
+                else
+                {
+                    userPopulated.LikedInstruments.Remove(instrument);
+                    db.SaveChanges();
+                    return Json(new { }, JsonRequestBehavior.AllowGet);
+                }
+            }
+            return Json(new { message = "login please" }, JsonRequestBehavior.AllowGet);
+        }
+
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)
